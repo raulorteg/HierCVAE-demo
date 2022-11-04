@@ -4,23 +4,51 @@ _Raul Ortega Ochoa_
 
 ![example](figures/example.png)
 ## About
+------------------------------
+
 The base HierVAE model from _(1)_ is modified to allow for conditional, controlled generation of molecules given a value of the desired property (HierCVAE). Here the property chosen is the electron band gap (eV).
 
 To verify the quality of the generated molecules with respect to the property targeted a surrogate model _(2)_ is trained to predict the electron band gap given the molecules.
 
 ## Input & Output
+------------------------------
 
 * *Input*: Desired electron band gap (eV) of the generated molecules (range 2.0-4.2 eV)
 
 * *Output*: Molecules generated (img) with SMILES representation and predicted electron band gap by the surrogate model.
 
+## Installation & Usage
+------------------------------
+
+### Conda:
+1. Clone the repository: ```git clone https://github.com/raulorteg/HierCVAE-demo```
+2. Create a conda environment using the yaml file: ```conda env create -f environment.yaml```
+3. Activate environment: ```conda activate cvae```
+
+3. Run the main script: ```python main.py --cond=2.6```
+
+### Docker:
+1. Clone the repository: ```git clone https://github.com/raulorteg/HierCVAE-demo```
+2. Build the image: ```sudo docker build --tag="hiercvae:demo"```
+3. Run main script on the image: ```sudo docker run -it --rm hiercvae:demo --cond=2.0```
+
+## Requirements
+------------------------------
+
+see the ```environment.yaml``` file
+
+
+
+
 ## Dataset
+------------------------------
 The current version is trained on a subset of 200k molecules from the The Harvard organic photovoltaic dataset : https://www.nature.com/articles/sdata201686#Sec7, _(3)_.
 
 The property chosen for the controlled generation of molecules is the electron band gap. The subset comprises molecules between 2.0-4.2 eV electron band gap, so the model is expected to work more reliable within this bounds.
 
 
 ## References
+------------------------------
 
 _(1). Jin, Wengong & Barzilay, Regina & Jaakkola, Tommi. (2020). Hierarchical Generation of Molecular Graphs using Structural Motifs._
 
