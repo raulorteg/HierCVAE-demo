@@ -10,6 +10,9 @@ The base HierVAE model from _(1)_ is modified to allow for conditional, controll
 
 To verify the quality of the generated molecules with respect to the property targeted a surrogate model _(2)_ is trained to predict the electron band gap given the molecules.
 
+
+_This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 957189. The project is part of BATTERY 2030+, the large-scale European research initiative for inventing the sustainable batteries of the future._
+
 ## Input & Output
 ------------------------------
 
@@ -37,7 +40,8 @@ To verify the quality of the generated molecules with respect to the property ta
 
 see the ```environment.yaml``` file
 
-
+## License
+Apache License
 
 
 ## Dataset
